@@ -44,3 +44,20 @@
 - [ ] 安装 lobster 并测试工作流
 - [ ] 安装 peekaboo 并测试截图
 - [ ] 编写第一个 lobster workflow
+
+## 社区资源（新增）
+
+### 技能库
+| 资源 | 技能数 | 用途 |
+|------|--------|------|
+| openclaw-superpowers | 56 | 自主/自愈/安全/自我改进 |
+| awesome-openclaw-skills | 5400+ | 全部技能索引 |
+| openclaw-master-skills | 1209+ | 精选+每周更新 |
+| awesome-openclaw | 合集 | 技术栈推荐 |
+
+### 最有价值的技能方向
+1. **自主运维**：agent-self-recovery, heartbeat-governor, morning-briefing
+2. **安全防护**：prompt-injection-guard, dangerous-action-guard, secrets-hygiene
+3. **记忆持久化**：dag-recall, memory-graph-builder, memory-integrity-checker
+4. **自我改进**：create-skill（对话中写新技能！）
+5. **成本控制**：spend-circuit-breaker, context-budget-guard
