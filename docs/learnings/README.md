@@ -34,3 +34,29 @@
 ### 分支策略
 - main: 稳定版
 - dev: 开发版（新功能先在 dev 测试）
+
+## 2026-05-23: 自学代理系统
+
+### 设计
+- 创建了 `self-learning-agent` cron 任务，每天凌晨3:00自动运行
+- isolated agentTurn 模式，不占用主会话上下文
+- 工作流：搜索GitHub → 对比已有 → 分析新项目 → 更新知识库 → commit到dev
+
+### 关键设计决策
+- `lightContext: true` 减少token消耗
+- 不fork新仓库（避免版本碎片化）
+- 只读分析，不修改本地配置
+- 结果自动commit到openclaw-agentics dev分支
+- 无新发现时静默（HEARTBEAT_OK）
+
+### 完整的定时任务矩阵
+| 时间 | 任务 | 频率 |
+|------|------|------|
+| 每15分钟 | gateway-heartbeat | 持续 |
+| 03:00 | self-learning-agent | 每日 |
+| 09:00 | daily-health-report | 每日 |
+
+### 技能体系
+- 39个技能覆盖安全/方法论/弹性/任务/自我改进
+- 来源：openclaw-superpowers + 自研 + 社区
+- 全部commit到openclaw-agentics dev分支
