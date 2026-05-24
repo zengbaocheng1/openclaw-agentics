@@ -60,3 +60,7 @@
 - 39个技能覆盖安全/方法论/弹性/任务/自我改进
 - 来源：openclaw-superpowers + 自研 + 社区
 - 全部commit到openclaw-agentics dev分支
+
+## 2026-05-24 — 自学循环
+- 知识库: 24 个项目
+- 技能: 43 个
