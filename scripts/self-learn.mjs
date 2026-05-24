@@ -195,6 +195,20 @@ async function main() {
     updateMemoryFile(trulyNew);
   }
 
+  // 自动同步到 GitHub
+  console.log('\n🔄 同步到 GitHub...');
+  try {
+    execSync('bash scripts/mirror-sync.sh dev 2>&1', { 
+      cwd: WORKSPACE, 
+      timeout: 60000,
+      encoding: 'utf8',
+      shell: '/bin/bash'
+    });
+    console.log(execSync('tail -2 ~/.openclaw-backups/openclaw-*.tar.gz 2>/dev/null | head -1 || echo "备份检查"', { timeout: 5000, encoding: 'utf8' }));
+  } catch(e) {
+    // mirror-sync failure is non-fatal
+  }
+
   console.log('─'.repeat(50));
   console.log('✅ 完成');
 }

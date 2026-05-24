@@ -25,8 +25,9 @@
 
 ## 🧠 学到的最佳实践
 - 模型配置去重：483→289，精简约40%
-- agents.list 必须是 dict 而非 list
+- `openclaw.json` 是严格 schema 校验，`agents.list` 必须是 `array`（不是 `dict`/`object`）
 - Gateway 重启风暴：systemd冲突，只用一种管理方式
+- 故障处理手册：`TROUBLESHOOTING.md`
 - 技能应从 superpowers 精选安装，不要全量（可能有cron冲突）
 - 工具模式：stdout=JSON用于程序管道，stderr=人类可读用于调试
 - [ ] **NousResearch/hermes-agent** (⭐163286): The agent that grows with you — https://github.com/NousResearch/hermes-agent
