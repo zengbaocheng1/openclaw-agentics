@@ -51,3 +51,19 @@
 - [ ] **volcengine/OpenViking** (⭐24525): OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving. — https://github.com/volcengine/OpenViking
 - [ ] **NVIDIA/NemoClaw** (⭐20605): Run OpenClaw more securely inside NVIDIA OpenShell with managed inference — https://github.com/NVIDIA/NemoClaw
 - [ ] **garrytan/gbrain** (⭐18240): Garry's Opinionated OpenClaw/Hermes Agent Brain — https://github.com/garrytan/gbrain
+
+## 🧠 脑镜像系统（最高优先级）
+
+**GitHub 仓库：** `zengbaocheng1/openclaw-agentics` (dev分支)
+**复活命令：** `curl -fsSL https://raw.githubusercontent.com/zengbaocheng1/openclaw-agentics/dev/scripts/bootstrap.sh | bash`
+
+**核心内容（必须保留）：**
+- AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md
+- MEMORY.md, TROUBLESHOOTING.md, HEARTBEAT.md
+- scripts/bootstrap.sh (复活脚本)
+- scripts/mirror-sync.sh (镜像同步)
+- scripts/self-learn.mjs (自学代理)
+- skills/ (40+ 技能)
+- knowledge/ (24个项目知识库)
+
+**规则：任何操作都不能删除或覆盖这个仓库的 dev 分支**
