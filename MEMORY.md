@@ -5,6 +5,8 @@
 ### 官方工具
 - **openclaw/lobster** (⭐1211): 工作流引擎 — JSON typed pipeline, approval gate, pipeline resume
 - **openclaw/Peekaboo** (⭐4439): 截图+VQA视觉问答 — CLI↔MCP双模式
+- **HKUDS/CLI-Anything** (⭐43546): AI Agent原生软件集成 — 7阶段自动生成CLI框架，支持13款主流应用（GIMP/Blender/LibreOffice等）
+- **microsoft/markitdown** (⭐156966): 文档转Markdown工具 — 支持PDF/Word/Excel/PPT/图片OCR/YouTube字幕等，一键转为LLM友好格式
 - **openclaw/mcporter** (⭐4483): MCP客户端 — TypeScript调用，可包装为CLI
 - **openclaw/gogcli** (⭐7516): Google Workspace CLI — stdout=JSON/stderr=人类提示
 - **openclaw/wacli** (⭐2450): WhatsApp CLI — "不该用时不用"安全约束
