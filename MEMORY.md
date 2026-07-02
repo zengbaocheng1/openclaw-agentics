@@ -69,3 +69,28 @@
 - knowledge/ (24个项目知识库)
 
 **规则：任何操作都不能删除或覆盖这个仓库的 dev 分支**
+
+## 2026-07-02 OpenClaw 系统修复记录
+
+### 🔧 问题描述
+- **症状**：频繁收到 `Cron job "gateway-heartbeat" failed: cron: job execution timed out (last phase: model-call-started)`
+- **根本原因**：OpenClaw cron 子系统走 AI 模型调用，模型响应慢时 isolated session 积压，最终 cron 引擎本身卡死，连 API 都超时
+
+### ✅ 解决方案
+1. **禁用原故障 cron job**：`7f9cd620-ec0f-49b7-aa0d-67fe658cbaa9`（gateway-heartbeat）永久禁用
+2. **用 systemd timer 替代**：完全绕过 OpenClaw cron，零 AI 依赖
+   - 文件：`~/.config/systemd/user/gateway-heartbeat.timer`（每15分钟触发）
+   - 文件：`~/.config/systemd/user/gateway-heartbeat.service`
+   - 脚本：`~/.openclaw/workspace/scripts/gateway-heartbeat-alert.sh`（纯 bash，检测 pid + curl health）
+3. **Gateway 重启**：kill 旧进程 5990 → 新进程 6703 已稳定运行
+
+### 📊 健康日志
+- 旧 cron 日志：`~/.openclaw/logs/health-check.log`
+- systemd 心跳每 15 分钟自动执行，脚本成功时静默，失败时写入日志
+- 当前状态：✅ 一切正常，零告警
+
+### ⚠️ 关键教训
+- **不要用 AI 模型做定时心跳**：轻量任务也容易因模型排队超时
+- **systemd timer 是最可靠的定时方案**：完全不依赖 OpenClaw，永久稳定
+- **Gateway cron 子系统卡死不影响核心功能**：消息收发正常，只是 cron API 超时
+
