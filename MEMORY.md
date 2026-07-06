@@ -25,6 +25,31 @@
 ## 📚 待学项目
 （自学代理自动填充）
 
+## 🏛️ 投资CEO技能库（已安装）
+基于 `xbtlin/ai-berkshire` + `LLMQuant/skills` + `TradingAgents-astock` 三套框架融合。
+
+**价值投资体系（ai-berkshire）：**
+- `investment-research`: 四大师并行深度研究，强制结论+价格区间
+- `investment-quality-screen`: 快速去劣，6关10分钟筛选
+- `investment-news-pulse`: 股价异动归因，判断价值事件vs情绪
+- `investment-portfolio`: 组合管理，仓位/集中度/再平衡/止损
+
+**量化分析体系（LLMQuant）：**
+- `llmquant-equities`: 股票横向对比，五维分析框架
+- `llmquant-macro`: 全球宏观仪表盘，美联储/央行跟踪
+
+**A股特化体系（TradingAgents-astock）：**
+- `investment-astock-team`: 7位分析师并行+游资追踪+解禁监控+Bull/Bear辩论
+
+**核心工具：**
+- `verify_market_cap.py`: decimal精确计算，市值校验，偏差>1%告警
+
+**防骗机制：** 多Agent对抗、芒格式逆向检验、8条红线否决、信息分级、留白原则
+
+**日常节奏：** 每日站会提醒（晚上8点），持仓异动随时同步
+
+**位置：** `~/.openclaw/workspace/skills/investment-*`
+
 ## 🧠 学到的最佳实践
 - 模型配置去重：483→289，精简约40%
 - `openclaw.json` 是严格 schema 校验，`agents.list` 必须是 `array`（不是 `dict`/`object`）
